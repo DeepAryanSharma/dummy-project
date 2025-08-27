@@ -1,0 +1,4 @@
+<!-- App Main Container -->
+<main>
+  <app-dashboard></app-dashboard>
+</main>

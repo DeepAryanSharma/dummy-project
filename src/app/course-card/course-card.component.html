@@ -1,0 +1,22 @@
+<div class="course-card">
+  <div class="thumbnail-wrapper">
+    <img [src]="thumbnail" alt="Course Thumbnail" />
+    <div class="progress-overlay">{{ progress }}% Complete</div>
+  </div>
+  <div class="course-info">
+    <div class="course-title">{{ title }}</div>
+    <div class="provider">
+      <img [src]="providerLogo" alt="Provider Logo" />
+      <span>{{ provider }}</span>
+    </div>
+    <div class="metadata">
+      <span class="rating"> <i class="fa fa-star"></i> {{ rating }} </span>
+      <span class="reviews">({{ reviews }} reviews)</span>
+      <span class="enrolled">| {{ enrolled }} Enrolled</span>
+    </div>
+    <div class="details">
+      <span class="level">{{ level }}</span>
+      <span class="duration">• {{ duration }}</span>
+    </div>
+  </div>
+</div>

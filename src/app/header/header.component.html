@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="header-left">
+    <span class="product-name">Product Name</span>
+  </div>
+  <div class="header-center">
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="Search Courses"
+        [(ngModel)]="searchText"
+        (input)="onSearchChange(searchText)"
+      />
+      @if (searchText) {
+      <button class="clear-btn" (click)="clearSearch()">×</button>
+      } @if (showDropdown) {
+      <ul class="autocomplete-dropdown">
+        @for (suggestion of filteredSuggestions; track suggestion) {
+        <li (click)="selectSuggestion(suggestion)">{{ suggestion }}</li>
+        }
+      </ul>
+      }
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="notification-icon"><i class="fa fa-bell"></i></span>
+    <div class="profile-avatar" (click)="toggleProfileDropdown()">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" />
+      @if (showProfileDropdown) {
+      <div class="profile-dropdown" (mouseleave)="closeProfileDropdown()">
+        <div class="dropdown-header">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" />
+          <div>
+            <div class="user-name">John Vick</div>
+            <div class="user-role">DC Software Engineer</div>
+          </div>
+        </div>
+        <ul>
+          <li>My Profile</li>
+          <li>Admin Console</li>
+          <li>My Courses</li>
+          <li>Blog</li>
+          <li>Log Out</li>
+        </ul>
+      </div>
+      }
+    </div>
+  </div>
+</header>

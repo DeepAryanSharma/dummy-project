@@ -1,0 +1,52 @@
+<div class="dashboard-bg">
+  <app-header></app-header>
+  <div class="dashboard-content">
+    <div class="stats-section">
+      @for (stat of stats; track stat.title) {
+      <div class="stat-card">
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-title">{{ stat.title }}</div>
+        <a class="stat-action">{{ stat.action }}</a>
+      </div>
+      }
+    </div>
+    <div class="carousel-section">
+      <div class="carousel-title">Last Viewed Courses</div>
+      <div class="carousel">
+        @for (course of lastViewedCourses; track course.title) {
+        <app-course-card
+          [thumbnail]="course.thumbnail"
+          [progress]="course.progress"
+          [title]="course.title"
+          [provider]="course.provider"
+          [providerLogo]="course.providerLogo"
+          [rating]="course.rating"
+          [reviews]="course.reviews"
+          [enrolled]="course.enrolled"
+          [level]="course.level"
+          [duration]="course.duration"
+        />
+        }
+      </div>
+    </div>
+    <div class="carousel-section">
+      <div class="carousel-title">Newly Launched</div>
+      <div class="carousel">
+        @for (course of newlyLaunchedCourses; track course.title) {
+        <app-course-card
+          [thumbnail]="course.thumbnail"
+          [progress]="course.progress"
+          [title]="course.title"
+          [provider]="course.provider"
+          [providerLogo]="course.providerLogo"
+          [rating]="course.rating"
+          [reviews]="course.reviews"
+          [enrolled]="course.enrolled"
+          [level]="course.level"
+          [duration]="course.duration"
+        />
+        }
+      </div>
+    </div>
+  </div>
+</div>
